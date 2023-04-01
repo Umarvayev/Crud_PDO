@@ -18,5 +18,30 @@ if(isset($_POST['add'])){
     echo $unit->showMessage('danger', 'Something went wrong!');
   }
 }
+// Handle Fetch All Users Ajax Request
+if (isset($_GET['read'])) {
+  $users = $db->read();
+  $output = '';
+  if ($users) {
+    foreach ($users as $row) {
+      $output .= '<tr>
+                    <td>' . $row['id'] . '</td>
+                    <td>' . $row['first_name'] . '</td>
+                    <td>' . $row['last_name'] . '</td>
+                    <td>' . $row['email'] . '</td>
+                    <td>' . $row['phone'] . '</td>
+                    <td>
+                      <a href="#" id="' . $row['id'] . '" class="btn btn-success btn-sm rounded-pill py-0 editLink" data-toggle="modal" data-target="#editUserModal">Edit</a>
 
+                      <a href="#" id="' . $row['id'] . '" class="btn btn-danger btn-sm rounded-pill py-0 deleteLink">Delete</a>
+                    </td>
+                  </tr>';
+    }
+    echo $output;
+  } else {
+    echo '<tr>
+            <td colspan="6">No Users Found in the Database!</td>
+          </tr>';
+  }
+}
 ?>

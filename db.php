@@ -14,4 +14,13 @@
       ]);
       return true;
     }
+    //Fetch All Users Form Database
+    public function read()
+{
+    $sql = 'SELECT * FROM users ORDER BY id DESC';
+    $stmt = $this->conn->prepare($sql);
+    $stmt->execute(); 
+    $result = $stmt->fetchAll();
+    return $result;
+}
 }

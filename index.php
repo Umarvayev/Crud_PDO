@@ -80,17 +80,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Umarveyev</td>
-                                <td>Xusan</td>
-                                <td>Umarvayevxusan@gmail.com</td>
-                                <td>+998944116394 </td>
-                                <td>
-                                    <a href="#" class="btn btn-success btn-sm rounded-pill py-0">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm rounded-pill py-0">Delete</a>
-                                </td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>
