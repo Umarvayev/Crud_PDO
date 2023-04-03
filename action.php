@@ -31,7 +31,7 @@ if (isset($_GET['read'])) {
                     <td>' . $row['email'] . '</td>
                     <td>' . $row['phone'] . '</td>
                     <td>
-                      <a href="#" id="' . $row['id'] . '" class="btn btn-success btn-sm rounded-pill py-0 editLink" data-toggle="modal" data-target="#editUserModal">Edit</a>
+                      <a href="#" id="' . $row['id'] . '" class="btn btn-success btn-sm rounded-pill py-0 editLink" data-toggle="modal" data-target="#editNewUserModal ">Edit</a>
 
                       <a href="#" id="' . $row['id'] . '" class="btn btn-danger btn-sm rounded-pill py-0 deleteLink">Delete</a>
                     </td>
@@ -43,5 +43,13 @@ if (isset($_GET['read'])) {
             <td colspan="6">No Users Found in the Database!</td>
           </tr>';
   }
+}
+
+ // Handle Edit User Ajax Request
+ if (isset($_GET['edit'])) {
+  $id = $_GET['id'];
+
+  $user = $db->readOne($id);
+  echo json_encode($user);
 }
 ?>

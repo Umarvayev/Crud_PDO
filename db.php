@@ -23,4 +23,14 @@
     $result = $stmt->fetchAll();
     return $result;
 }
+// Fetch Singel User From Database
+public function readOne($id)
+{
+  $sql = 'SELECT * FROM users WHERE id = :id';
+  $stmt = $this->conn->prepare($sql);
+  $stmt->execute(['id' => $id]);
+  $result = $stmt->fetch();
+  return $result;
 }
+}
+

@@ -41,3 +41,24 @@ const fetchAllUsers = async() => {
    tbody.innerHTML = response;
 };
 fetchAllUsers();
+
+// Edit User Ajax Request
+tbody.addEventListener("click", (e) => {
+  if (e.target && e.target.matches("a.editLink")) {
+    e.preventDefault();
+    let id = e.target.getAttribute("id");
+    editUser(id);
+  }
+});
+
+const editUser = async (id) => {
+  const data = await fetch(`action.php?edit=1&id=${id}`, {
+    method: "GET",
+  });
+  const response = await data.json();
+  document.getElementById("id").value = response.id;
+  document.getElementById("fname").value = response.first_name;
+  document.getElementById("lname").value = response.last_name;
+  document.getElementById("email").value = response.email;
+  document.getElementById("phone").value = response.phone;
+};

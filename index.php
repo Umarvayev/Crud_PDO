@@ -20,20 +20,20 @@
                     <form id="add-user-form" class="p-2" novalidate>
                         <div class="row mb-3 gx-3">
                             <div class="col">
-                                <input type="text" name="fname" id="fname" class="form-control form-control-lg" placeholder="Ente First Name" required>
+                                <input type="text" name="fname" class="form-control form-control-lg" placeholder="Ente First Name" required>
                                 <div class="invalid-feedback">First name is required!</div>
                             </div>
                             <div class="col">
-                                <input type="text" name="lname" id="lname" class="form-control form-control-lg" placeholder="Ente Last Name" required>
+                                <input type="text" name="lname" class="form-control form-control-lg" placeholder="Ente Last Name" required>
                                 <div class="invalid-feedback">Last name is required!</div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="email" name="email" id="email" class="form-control form-contrlo-lg" placeholder="Enter Email" required>
+                            <input type="email" name="email" class="form-control form-contrlo-lg" placeholder="Enter Email" required>
                             <div class="invalid-feedback">Last name is required!</div>
                         </div>
                         <div class="mb-3">
-                            <input type="tel" name="phone" id="phone" class="form-control form-contrlo-lg" placeholder="Enter Phone" required>
+                            <input type="tel" name="phone" class="form-control form-contrlo-lg" placeholder="Enter Phone" required>
                             <div class="invalid-feedback">Phone is required!</div>
                         </div>
                         <div class="mb-3">
@@ -45,6 +45,45 @@
         </div>
     </div>
     <!--Add New User Modal End -->
+
+    <!--Edit User Modal Start -->
+      <div class="modal" tabindex="1" id="editNewUserModal">  
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit This User</h5>
+                    <button type="submit" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-user-form" class="p-2" novalidate>
+                        <input type="hidden" name="id" id="id">
+                        <div class="row mb-3 gx-3">
+                            <div class="col">
+                                <input type="text" name="fname" id="fname" class="form-control form-control-lg" placeholder="Ente First Name" required>
+                                <div class="invalid-feedback">First name is required!</div>
+                            </div>
+                            <div class="col">
+                                <input type="text" name="lname" id="lname" class="form-control form-control-lg" placeholder="Ente Last Name" required>
+                                <div class="invalid-feedback">Last name is required!</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" name="email" id="email" class="form-control form-contrlo-lg" placeholder="Enter Email" required>
+                            <div class="invalid-feedback">Email is required!</div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" name="phone" id="phone" class="form-control form-contrlo-lg" placeholder="Enter Phone" required>
+                            <div class="invalid-feedback">Phone is required!</div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" value="Update User " class="btn btn-success btn-block btn-lg" id="edit-user-btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit New User Modal End -->
     <div class="container">
         <div class="row mt-4">
             <div class="col-lg-12 d-flex justify-content-between align-items-center">
