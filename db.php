@@ -32,5 +32,20 @@ public function readOne($id)
   $result = $stmt->fetch();
   return $result;
 }
+
+// Update Single User
+public function update($id, $fname, $lname, $email, $phone)
+{
+  $sql = 'UPDATE users SET first_name = :fname, last_name = :lname, email = :email, phone = :phone WHERE id = :id';
+  $stmt = $this->conn->prepare($sql);
+  $stmt->execute([
+    'id'=> $id,
+    'fname' => $fname,
+    'lname' => $lname,
+    'email' => $email,
+    'phone' => $phone
+  ]);
+  return true;
+}
 }
 

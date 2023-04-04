@@ -52,4 +52,20 @@ if (isset($_GET['read'])) {
   $user = $db->readOne($id);
   echo json_encode($user);
 }
+
+
+// Handle Update User Ajax Request
+if (isset($_POST['update'])){
+  $id = $unit->testInput($_POST['id']); 
+  $fname = $unit->testInput($_POST['fname']); 
+  $lname = $unit->testInput($_POST['lname']); 
+  $email = $unit->testInput($_POST['email']); 
+  $phone = $unit->testInput($_POST['phone']); 
+
+  if($db->update($id, $fname, $lname, $email, $phone)){
+    echo $unit->showMessage('succes', 'User updated successful!');
+  }else{
+    echo $unit->showMessage('danger', 'Something went wrong!');
+  }
+}
 ?>
