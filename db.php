@@ -47,5 +47,14 @@ public function update($id, $fname, $lname, $email, $phone)
   ]);
   return true;
 }
+
+//Delete User From Database
+public function delete($id)
+{
+  $sql = 'DELETE FROM users WHERE id = :id';
+  $stmt = $this->conn->prepare($sql);
+  $stmt->execute(['id'=> $id,]);
+  return true;
+}
 }
 

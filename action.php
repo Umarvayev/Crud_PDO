@@ -68,4 +68,14 @@ if (isset($_POST['update'])){
     echo $unit->showMessage('danger', 'Something went wrong!');
   }
 }
+
+//Handle Delete User Ajax Request
+if (isset($_GET['delete'])){
+  $id = $_GET['id'];
+  if ($db->delete($id)){
+    echo $unit ->showMessage('info', 'User deleted successful!');
+  }else{
+    echo $unit->showMessage('danger', 'Something went wrong!');
+  }
+}
 ?>
